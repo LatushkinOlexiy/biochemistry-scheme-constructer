@@ -1,0 +1,5 @@
+A simple GUI app which returns a .pdf of a biochemical transformation scheme from component A to component(s) B for an organism based on a KEGG database. 
+Usage guide:
+1. Launch GUI.py
+2. Enter respective parameters into input fields
+3. Save corresponding graph
