@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from pathlib import Path
 import graph as gp
-import KEGG_0_3 as kg
+import KEGG_0_4 as kg
 import translate as tr
 
 # Translation helper 
@@ -34,10 +34,10 @@ entry_start.insert(0, "glucose")
 entry_start.grid(row=0, column=1, columnspan=2, sticky="ew", pady=4, padx=4)
 
 # Section: Organism
-tk.Label(outer, text="Organism:", anchor="w").grid(
+tk.Label(outer, text="Organism code (e.g. \"eco\" for E. coli):", anchor="w").grid(
     row=1, column=0, sticky="w", pady=4)
 entry_organism = tk.Entry(outer, width=34)
-entry_organism.insert(0, "Escherichia coli")
+entry_organism.insert(0, "eco")
 entry_organism.grid(row=1, column=1, columnspan=2, sticky="ew", pady=4, padx=4)
 
 # Mode selector
@@ -60,7 +60,7 @@ single_frame.grid(row=3, column=0, columnspan=3, sticky="ew")
 tk.Label(single_frame, text="Target compound:", anchor="w").grid(
     row=0, column=0, sticky="w", pady=4)
 entry_single_target = tk.Entry(single_frame, width=34)
-entry_single_target.insert(0, "піруват")
+entry_single_target.insert(0, "pyruvate")
 entry_single_target.grid(row=0, column=1, sticky="ew", pady=4, padx=4)
 single_frame.columnconfigure(1, weight=1)
 
@@ -109,8 +109,8 @@ btn_add = tk.Button(multi_frame, text="＋  Add target",
 btn_add.grid(row=1, column=1, sticky="w", padx=4, pady=4)
 
 # Seed with two default rows
-add_target_row("glycerin")
-add_target_row("Palmitate")
+add_target_row("glycerol")
+add_target_row("alanine")
 
 
 def toggle_mode():
